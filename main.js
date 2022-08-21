@@ -49,6 +49,12 @@ const operationMapper = (operation, label) => {
     obj.label = label;
     console.log(obj);
   }
+  if (obj.b.length > 0) {
+    obj.a = [operation(parseInt(obj.a.join("")), parseInt(obj.b.join("")))];
+    obj.b = [];
+    renderAnswer();
+    console.log(obj);
+  }
   renderSum();
 };
 
