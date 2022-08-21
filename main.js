@@ -30,7 +30,6 @@ let obj = {
   b: [],
 };
 
-
 const numberMapper = (number) => {
   if (!obj.operation) {
     obj.a.push(number);
@@ -91,14 +90,14 @@ const clearAnswer = () => {
 };
 
 const sum = () => {
-    if (obj.b == 0 && obj.label == "/") {
-        answer = "Don't divide by zero"
-        renderAnswer();
-    } else {
-        answer = obj.operation(parseInt(obj.a.join("")), parseInt(obj.b.join("")));
-        renderAnswer();
-    }
-  
+  if (obj.b == 0 && obj.label == "/") {
+    answer = "Don't divide by zero";
+    renderAnswer();
+  } else {
+    answer = obj.operation(parseInt(obj.a.join("")), parseInt(obj.b.join("")));
+    renderAnswer();
+  }
+
   obj = { a: [], operation: null, b: [] };
 };
 
