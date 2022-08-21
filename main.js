@@ -30,7 +30,6 @@ let obj = {
   b: [],
 };
 
-let answer = 0;
 
 const numberMapper = (number) => {
   if (!obj.operation) {
@@ -83,7 +82,7 @@ const renderOperationsButtons = () => {
 const renderSum = () => {
   sumContainer.textContent = obj.a + (obj.label || "") + (obj.b || "");
 };
-const renderAnswer = () => {
+const renderAnswer = (snark) => {
   sumContainer.textContent = obj.a + obj.label + obj.b + "=" + answer;
 };
 
@@ -94,6 +93,7 @@ const clearAnswer = () => {
 const sum = () => {
   answer = obj.operation(parseInt(obj.a.join("")), parseInt(obj.b.join("")));
   renderAnswer();
+  obj = { a: [], operation: null, b: [] };
 };
 
 const clearSum = () => {
