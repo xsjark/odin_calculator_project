@@ -82,7 +82,7 @@ const renderOperationsButtons = () => {
 const renderSum = () => {
   sumContainer.textContent = obj.a + (obj.label || "") + (obj.b || "");
 };
-const renderAnswer = (snark) => {
+const renderAnswer = () => {
   sumContainer.textContent = obj.a + obj.label + obj.b + "=" + answer;
 };
 
@@ -91,8 +91,14 @@ const clearAnswer = () => {
 };
 
 const sum = () => {
-  answer = obj.operation(parseInt(obj.a.join("")), parseInt(obj.b.join("")));
-  renderAnswer();
+    if (obj.b == 0 && obj.label == "/") {
+        answer = "Don't divide by zero"
+        renderAnswer();
+    } else {
+        answer = obj.operation(parseInt(obj.a.join("")), parseInt(obj.b.join("")));
+        renderAnswer();
+    }
+  
   obj = { a: [], operation: null, b: [] };
 };
 
