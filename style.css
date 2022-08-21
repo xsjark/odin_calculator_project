@@ -1,0 +1,26 @@
+.center-column {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#sum-container {
+    display: flex;
+    width: 200px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 10px
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 8px;
+    padding: 8px 1px;
+    width: 200px
+}
+
+.button {
+    aspect-ratio: 1;
+}
